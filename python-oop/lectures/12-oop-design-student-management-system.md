@@ -192,5 +192,5 @@ classDiagram
 
 ## 8. Next Step
 Explore the complete implementation of this architecture in:
-- [projects/student-management-system/](file:///home/adamsgeeky/Documents/Geekink/Geekink-Institude/Interns/PythonBootcamp/python-oop/projects/student-management-system)
+- [projects/student-management-system/](../projects/student-management-system/)
 - [Lecture 13 — Final Capstone Project](13-final-project.md)

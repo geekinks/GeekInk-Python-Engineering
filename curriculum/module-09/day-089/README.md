@@ -157,11 +157,11 @@ Create a `config.yaml` file in the project root:
 3. Run tests: `pytest`
 4. Submit a pull request.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+See [CONTRIBUTING.md](../../../CONTRIBUTING.md) for detailed guidelines.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT License. See [LICENSE](../../../LICENSE) for details.
 ```
 
 ### Example: Well-documented Python module
