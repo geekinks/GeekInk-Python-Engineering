@@ -8,6 +8,11 @@ from pygame.locals import *  # Import QUIT and other constants
 # Initialize the pygame library
 pygame.init()
 
+# Import modules that create pygame sound and display objects only after pygame
+# has initialized its mixer.
+from award import display_winners_award
+from sound import background_music, play_correct_sound, play_incorrect_sound
+
 
 # ANSI escape codes for color
 # These ANSI escape codes are used to add colored text to the console output.

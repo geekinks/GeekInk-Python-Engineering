@@ -1,3 +1,9 @@
+from pathlib import Path
+
+import pygame
+from pygame.locals import QUIT
+
+
 def display_winners_award():
     # Set up the window
     screen_width = 800
@@ -6,7 +12,7 @@ def display_winners_award():
     pygame.display.set_caption("Winner's Award")
     
     # Load the award image
-    award_image = pygame.image.load("award.png")  # Replace "winner_award.png" with the actual image file
+    award_image = pygame.image.load(Path(__file__).resolve().parent / "award.png")
     
     # Get the size of the image
     image_width, image_height = award_image.get_size()

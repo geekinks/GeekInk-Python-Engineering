@@ -1,11 +1,18 @@
+from pathlib import Path
+
+import pygame
+
+
+SOUNDS_DIR = Path(__file__).resolve().parent / "sounds"
+
 # Load the 'correct' sound effect
-correct_sound = pygame.mixer.Sound("./sounds/correct.wav")
+correct_sound = pygame.mixer.Sound(SOUNDS_DIR / "correct.wav")
 
 # Load the 'incorrect' sound effect
-incorrect_sound = pygame.mixer.Sound("./sounds/incorrect.wav")
+incorrect_sound = pygame.mixer.Sound(SOUNDS_DIR / "incorrect.wav")
 
 # Load the background music
-background_music = pygame.mixer.Sound("./sounds/background_music.wav")
+background_music = pygame.mixer.Sound(SOUNDS_DIR / "background_music.wav")
 
 # Function to play the correct guess sound
 # This function plays the 'correct' sound effect when the player guesses the correct number.
