@@ -1,45 +1,23 @@
+print("========================== Student Result Checker ======================")
+
+
 # Tuple: Subjects are fixed and should not change
 subjects = ("English", "Maths", "Science", "Civics", "Agriculture")
 
 
-def get_text(prompt, field_name):
-    """Get valid text input from the user."""
+import task.students.Maryaamah.text as text 
+text.get_text
 
-    while True:
-        value = input(prompt).strip()
-
-        # Check if input is empty
-        if not value:
-            print(f"Error: {field_name} cannot be empty.")
-            continue
-
-        # Check if input contains only numbers
-        if value.isdigit():
-            print(f"Error: {field_name} must contain text, not numbers.")
-            continue
-
-        return value
+import task.students.Maryaamah.integer as integer
+integer.get_integer
 
 
-def get_integer(prompt, field_name, minimum=None, maximum=None):
-    """Get a valid integer from the user."""
+ 
 
-    while True:
-        try:
-            value = int(input(prompt))
 
-            if minimum is not None and value < minimum:
-                print(f"Error: {field_name} must be at least {minimum}.")
-                continue
 
-            if maximum is not None and value > maximum:
-                print(f"Error: {field_name} must not exceed {maximum}.")
-                continue
 
-            return value
 
-        except ValueError:
-            print(f"Error: Please enter a valid number for {field_name}.")
 
 
 def calculate_grade(average):
@@ -63,13 +41,14 @@ def calculate_grade(average):
         return "F"
 
 
+
 def calculate_result(scores):
 
     total = sum(scores)
 
     average = total / len(scores)
 
-    grade = calculate_grade(average)
+    grade = grade.calculate_grade(average)
 
     if average >= 40:
         result = "Pass"
@@ -81,19 +60,19 @@ def calculate_result(scores):
 
 def collect_student():
 
-    name = get_text(
+    name = text.get_text(
         "Enter student name: ",
         "Student name"
     )
 
-    age = get_integer(
+    age = integer.get_integer(
         "Enter student age: ",
         "Age",
         1,
         100
     )
 
-    department = get_text(
+    department = text.get_text(
         "Enter student department: ",
         "Department"
     )
@@ -109,7 +88,7 @@ def collect_student():
     # List: stores the student's scores
     for subject in subjects:
 
-        score = get_integer(
+        score = integer.get_integer(
             f"Enter {subject} marks: ",
             f"{subject} marks",
             0,
@@ -147,3 +126,33 @@ def display_result(student):
     print(f"Result:         {result}")
 
     print("================================================")
+
+
+# List: stores multiple students
+students = []
+
+
+# Get number of students
+number_of_students = integer.get_integer(
+    "\nHow many students do you want to enter? ",
+    "Number of students",
+    1
+)
+
+
+# Collect students
+for i in range(number_of_students):
+
+    print(f"\n========== Student {i + 1} ==========")
+
+    student = collect_student()
+
+    students.append(student)
+
+
+# Display all students' results
+print("\n\n================ ALL STUDENT RESULTS ================")
+
+for student in students:
+
+    display_result(student)
