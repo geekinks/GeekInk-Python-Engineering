@@ -1,10 +1,13 @@
+import datetime 
+current_year = datetime.datetime.now().year
+
 print("=========================")
 print("NIN Registration Form")
 print("=========================")
 
 name = input("Enter your full name: ")
 birth_year = int(input("Enter your date of birth (YYYY): "))
-age = 2026 - birth_year
+age = current_year - birth_year
 gender = input("Enter your gender (M/F): ")
 state_of_origin = input("Enter your state of origin: ")
 lga = input("Enter your Local Government Area (LGA): " )
